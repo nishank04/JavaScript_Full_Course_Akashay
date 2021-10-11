@@ -84,32 +84,131 @@
 // console.log(isFullAge);
 
 ///Operator Precedence
-const now = 2037;
-const ageNishank = now - 1989;
-const ageAkshay = now - 2018;
+// const now = 2037;
+// const ageNishank = now - 1989;
+// const ageAkshay = now - 2018;
 
-console.log(now - 1989 > now - 2018);
+// console.log(now - 1989 > now - 2018);
 
-let x , y;
-x = y = 25 - 10 - 5; // x = y = 10, x = 10
-console.log(x, y);
+// let x , y;
+// x = y = 25 - 10 - 5; // x = y = 10, x = 10
+// console.log(x, y);
 
-const averageAge = (ageNishank + ageAkshay) / 2; // BODMAS
-console.log(ageNishank, ageAkshay, averageAge);
+// const averageAge = (ageNishank + ageAkshay) / 2; // BODMAS
+// console.log(ageNishank, ageAkshay, averageAge);
 
-///Strings and Template Literals
-const firstName = 'Akshay';
-const job = 'businessmen';
-const birthYear = 1978;
-const year = 2037;
+// ///Strings and Template Literals
+// const firstName = 'Akshay';
+// const job = 'businessmen';
+// const birthYear = 1978;
+// const year = 2037;
 
-const akshay = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
-console.log(akshay);
+// const akshay = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+// console.log(akshay);
 
-const akshayNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
-console.log(akshayNew);
+// const akshayNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+// console.log(akshayNew);
 
-console.log(`String with \n\ multiple \n\ lines`);
-console.log(`String with
- multiple 
- lines`);
+// console.log(`String with \n\ multiple \n\ lines`);
+// console.log(`String with
+//  multiple 
+//  lines`);
+
+ ////Taking Decisions: if / else statements
+
+ const age =  2;
+
+ if(age >= 18) {
+     console.log('Akshay can get driving Liscence')
+ } else {
+     const yearsLeft = 18 - age
+     console.log(`Akshay is too young, wait another ${yearsLeft} years.`)
+ }
+
+ const birthYear = 2012;
+ let century;
+ if(birthYear <= 2000) {
+     century = 20;
+ } else {
+     century = 21;
+ }
+ 
+ console.log(century)
+
+////////////////////////////////////////
+// Coding Challenge #2
+// Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+
+// 1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// 2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+
+// HINT: Use an if/else statement
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+// const massMark = 95;
+// const heightMark = 1.88;
+// const massJohn = 85;
+// const heightJohn = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`)
+} else {
+  console.log(`John's BMI (${BMIJohn}) is higher than Marks's (${BMIMark})!`)
+}
+
+////Type Conversion and Coercion
+
+//Type conversion
+const inputYear = '1919';
+//const str = 'Hello World';
+//const newStr = Number(str);
+const newInputYear = Number(inputYear);
+console.log(Number(inputYear), inputYear);
+console.log(Number('Nishank'));
+console.log(typeof NaN);
+const str = 23;
+console.log(typeof str)
+console.log(String(str), 23);
+console.log(typeof (String(str)));
+
+///type coercion
+console.log('I am ' + ('23' +  23) + ' years old');
+console.log('23' - '10' - 3);
+console.log('23' / '2');
+console.log('23' > '18');
+
+let n = '1' + 1; // 11
+n = n - 1;
+console.log(n);
+
+////Truth and False
+
+//5 Falsy values -  0, '',undefined, null, Nan
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Akshay'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+const money = undefined;
+if (money) {
+    console.log(`Don't spent it all!!`)
+} else{
+    console.log(`You should get a job!`)
+}
+
+let height = 0;
+
+if (height) {
+    console.log(`Yay!! height is defined`)
+}else{
+    console.log('Height is undefined');
+}
