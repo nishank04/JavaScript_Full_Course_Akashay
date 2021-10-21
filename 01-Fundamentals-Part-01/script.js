@@ -235,14 +235,14 @@
 // }
 
 /////Logical Operators
-const hasDrivingLicense = true;
-const hasGoodVision = false;
-const isTired = true;
+// const hasDrivingLicense = true;
+// const hasGoodVision = false;
+// const isTired = true;
 // console.log(hasDrivingLicense && hasGoodVision)
 // console.log(hasDrivingLicense || hasGoodVision)
 
-console.log(hasDrivingLicense || hasGoodVision || isTired)
-console.log(hasDrivingLicense && hasGoodVision && isTired)
+// console.log(hasDrivingLicense || hasGoodVision || isTired)
+// console.log(hasDrivingLicense && hasGoodVision && isTired)
 
 ///Coding Challenge
 
@@ -260,29 +260,116 @@ TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 
 */
 
-const scoreDolphins = (96 + 108 + 89) / 3;
-const scoreKoalas = (88 + 91 + 110) / 3;
-console.log(scoreDolphins, scoreKoalas);
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+// console.log(scoreDolphins, scoreKoalas);
 
-if (scoreDolphins > scoreKoalas) {
-  console.log('Dolphins win the trophy');
-} else if (scoreKoalas > scoreDolphins) {
-  console.log('Koalas win the trophy ');
-} else if (scoreDolphins === scoreKoalas) {
-  console.log('Both win the trophy!');
-}
+// if (scoreDolphins > scoreKoalas) {
+//   console.log('Dolphins win the trophy');
+// } else if (scoreKoalas > scoreDolphins) {
+//   console.log('Koalas win the trophy ');
+// } else if (scoreDolphins === scoreKoalas) {
+//   console.log('Both win the trophy!');
+// }
 
-// BONUS 1
-const scoreDolphins = (97 + 112 + 80) / 3;
-const scoreKoalas = (109 + 95 + 50) / 3;
-console.log(scoreDolphins, scoreKoalas);
+// // BONUS 1
+// const scoreDolphins = (97 + 112 + 80) / 3;
+// const scoreKoalas = (109 + 95 + 50) / 3;
+// console.log(scoreDolphins, scoreKoalas);
 
-if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
-  console.log('Dolphins win the trophy ');
-} else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
-  console.log('Koalas win the trophy ');
-} else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
-  console.log('Both win the trophy!');
-} else {
-  console.log('No one wins the trophy ');
-}
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//   console.log('Dolphins win the trophy ');
+// } else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+//   console.log('Koalas win the trophy ');
+// } else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 && scoreKoalas >= 100) {
+//   console.log('Both win the trophy!');
+// } else {
+//   console.log('No one wins the trophy ');
+// }
+
+////The switch statement
+
+// const day = 'friday';
+
+// switch (day) {
+//   case 'monday': //day ==='monday'
+//     console.log('Plan course structure');
+//     console.log('Go to meetups');
+//     break;
+//   case 'tuesday':
+//     console.log('Prepare food');
+//     break;
+//   case 'wednesday':
+//   case 'thursday':
+//     console.log('Writing Code');
+//     break;
+//   case 'friday':
+//     console.log('Watch movie');
+//     break;
+//   case 'saturday':
+//   case 'sunday':
+//     console.log('Enjoy the weekend');
+//     break;
+//   default:
+//     console.log('Not a valid option');
+// }
+///Condiotional (ternary) operators
+
+// const age = 23;
+//   age >=18 ? console.log('I like to drink') : console.log('I like to drink water');
+
+// const drink = age >= 18 ? 'wine' : 'water';
+// console.log(drink);
+
+// h = (c == 0) //is c = 0
+//     ? null //then return 'null', else...
+//     : (v == r) //is v = r?
+//     ? (g - b) / c // then return this value, else...
+//     : (v == g) //is v = g?
+//     ? (b -r) / c +2  //then return this value
+//     : (r - g) / c +4 // otherwise this default value
+
+// var h;
+
+// if (c == 0)
+//   h = null;
+// else if (v ==r)
+//   h = (g - b) / c;
+// else if (v == g)
+//   h = (b -r ) / c +2;
+// else
+//   h = (r-g) / + 4;
+
+// let drink2;
+// if (age >= 18) {
+//   drink2 = 'wine 🍷';
+// } else {
+//   drink2 = 'water 💧';
+// }
+// console.log(drink2);
+
+// console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💧'}`);
+
+// Coding Challenge #4
+
+/*
+Steven wants to build a very simple tip calculator for whenever he goes eating in a resturant. In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to caluclate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: 'The bill was 275, the tip was 41.25, and the total value 316.25'
+
+TEST DATA: Test for bill values 275, 40 and 430
+
+HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 
+
+*/
+
+/*
+const bill = 430;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+*/
+// const bill = 430;
+
+// let tip = (bill >= 50 && bill <= 300) ? console.log(`The bill was bill the tip was ${bill*.15} and the total value is ${bill+tip}.`) : console.log(`The bill was bill the tip was  ${bill*.2} and the total value is ${bill+tip}.`);
