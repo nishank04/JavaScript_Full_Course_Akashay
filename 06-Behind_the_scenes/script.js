@@ -74,44 +74,94 @@
 
 //Example
 //console.log(undefined)
-if (!numProducts) deleteShoppingCart();
+// if (!numProducts) deleteShoppingCart();
 
-var numProducts = 10
+// var numProducts = 10
 
-function deleteShoppingCart() {
-    console.log(`All products are deleted`)
-}
+// function deleteShoppingCart() {
+//     console.log(`All products are deleted`)
+// }
 
-//tio be covered in next class
-// var x = 1;
-// let y = 2;
-// const z = 3
+// //tio be covered in next class
+// // var x = 1;
+// // let y = 2;
+// // const z = 3
 
-// console.log(x === window.x)
-// console.log(x === window.y)
-// console.log(x === window.z)
+// // console.log(x === window.x)
+// // console.log(x === window.y)
+// // console.log(x === window.z)
 
-//this keyword
-//console.log(this)
+// //this keyword
+// //console.log(this)
 
-// const calcAge = function (birthyear) {
+// // const calcAge = function (birthyear) {
+// //     console.log(2021 - birthyear)
+// //     console.log(this)
+// // }
+// // calcAge(1989)
+
+// const calcArrow = birthyear => {
 //     console.log(2021 - birthyear)
 //     console.log(this)
 // }
-// calcAge(1989)
 
-const calcArrow = birthyear => {
-    console.log(2021 - birthyear)
-    console.log(this)
-}
+// calcArrow(1989)
 
-calcArrow(1989)
+// const nishank = {
+//     year: 1989,
+//     calcAge: function () {
+//         console.log(this)
+//         console.log(2021 - this.year)
+//     },
+// }
+// nishank.calcAge()
 
-const nishank = {
-    year: 1989,
-    calcAge: function () {
-        console.log(this)
-        console.log(2021 - this.year)
-    },
-}
-nishank.calcAge()
+// const akshay = {
+//     year: 1987,
+// }
+
+// akshay.calcAge = nishank.calcAge
+// akshay.calcAge()
+// console.log(akshay)
+
+
+////Regular function vs Arrow function
+// var firstName = 'saurabh'
+// const nishank2 = {
+//     firstName: 'Nishank',
+//     year: 1989,
+//     calcAge1: function () {
+//         console.log(2021 - this.year)
+
+//         const isMillenial = () => {
+//             console.log(this)
+//             console.log(this.year >= 1981 && this.year <= 1996)
+//         }
+//         isMillenial()
+//     },
+//     greet: () => {
+//         console.log(this)
+//         console.log(`Hey ${firstName}`)   
+//     }
+// }
+
+// nishank2.calcAge1()
+// nishank2.greet()
+
+///arguments keyword
+
+// const addEpr = function(a, b) {
+//     console.log(arguments)
+// }
+
+// addEpr(2, 5)
+// addEpr(2, 5, 4, 8)
+
+//Arrow function - NOTE: Need to get back to you for the purpose of below functionality 
+// const addArrow1 = (a, b) => {
+//     console.log(arguments)
+//     return a + b
+// }
+
+// addArrow1(2, 5)
+
