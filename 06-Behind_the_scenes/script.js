@@ -158,6 +158,7 @@
 // addEpr(2, 5, 4, 8)
 
 //Arrow function - NOTE: Need to get back to you for the purpose of below functionality 
+//In arrow function argument keyword is applicable but in normal function argument keyword takes arhument values
 // const addArrow1 = (a, b) => {
 //     console.log(arguments)
 //     return a + b
@@ -165,3 +166,40 @@
 
 // addArrow1(2, 5)
 
+///Primitive vs. Objects in practices
+//primitive types
+let lastName = 'Yadav';
+let oldLastName = lastName;
+lastName = 'Kumar';
+console.log(lastName, oldLastName)
+
+//Reference types
+const nishank = {
+    firstName: 'Nishank',
+    lastName: 'Yadav',
+    age: 32,
+};
+
+const marriedNishank = nishank;
+
+marriedNishank.lastName = 'kumar';
+console.log('Before marriage', nishank)
+console.log('After marriage', marriedNishank)
+console.log(marriedNishank)
+
+///Copying Object
+
+const nishank2 = {
+    firstName: 'Nishanky',
+    lastName: 'Yadavy',
+    age: 32,
+    family: ['Saurabh', 'Runish'],
+};
+
+const nishank2Copy = Object.assign({}, nishank2);
+nishank2Copy.lastName = 'Singh';
+
+nishank2Copy.family.push('Akshay')
+nishank2Copy.family.push('Jatin')
+console.log(nishank2Copy)
+console.log(nishank2)
