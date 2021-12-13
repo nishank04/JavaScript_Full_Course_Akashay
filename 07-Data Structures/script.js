@@ -24,8 +24,8 @@ const restaurant = {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
     },
 
-    orderDelivery: function ({starterIndex, mainIndex, time, address}) {
-        console.log(`Order received! ${this.mainMenu[mainIndex]} will be delieverd to ${address} at ${time}`)
+    orderDelivery: function ({starterIndex = 1, mainIndex = 0, time = '17:24', address}) {
+        console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delieverd to ${address} at ${time}`)
     }
 }
 
@@ -35,6 +35,30 @@ restaurant.orderDelivery({
     mainIndex: 2,
     starterIndex: 2
 })
+
+restaurant.orderDelivery({
+    address: 'Uppal Southend',
+    starterIndex: 1,
+})
+
+///Spread Operator(...)
+const arr = [7, 8, 9, 10, 11];
+const badArray = [1, 2, arr[0], arr[1], arr[2]];
+
+const newArray = [1, 2, ...arr];
+console.log(newArray)
+
+
+const newMenu = [...restaurant.mainMenu, 'Noodles'];
+console.log(newMenu)
+
+//Copy Arrays
+const mainMenuCopy = [...restaurant.mainMenu]
+console.log(mainMenuCopy)
+
+//Joining 2 arrays
+const menu1 = [...restaurant.starterMenu, ...restaurant.mainMenu]
+console.log(menu1)
 
 
 const {name, openingHours, categories} = restaurant
@@ -104,8 +128,10 @@ const [p = 1, q = 2, r = 1] = [8, 9]
 console.log(p, q, r)
 
 /*
-Q1 Write a function called displayName() that takes an object as an argument and prints the person's first and last name.
-Use object destructuring in the function argument. And also, use template strings when printing the first and last name.
+Q1 Write a function called displayName() that takes an object as an argument and 
+prints the person's first and last name.
+Use object destructuring in the function argument. 
+And also, use template strings when printing the first and last name.
 
 Q2 Write a function called calculateSalesTotals() which returns an array with new two new keys (sale and total).
 The key 'sale' equals the calculated sale price based on the original price and the discount.
@@ -161,3 +187,34 @@ EXPECTED OUTPUT (array of objects):
   	total: 139.993
   }
 ]*/
+
+//Solution 2
+function calculateSalesTotals(sales) {
+    let updatedSales = sales.map(sale=>{
+        let {original, stock, discount=0.0} = sale;
+        sale['sale'] = original - original * discount;
+        sale['total'] = sale.sale*sale.stock;
+        return sale;
+    });
+    return updatedSales;
+}
+const sales = [
+    { item: 'PS4 Pro', stock: 3, original: 399.99 },
+    { item: 'Xbox One X', stock: 1, original: 499.99, discount: 0.1 },
+    { item: 'Nintendo Switch', stock: 4, original: 299.99 },
+    { item: 'PS2 Console', stock: 1, original: 299.99, discount: 0.8 },
+    { item: 'Nintendo 64', stock: 2, original: 199.99, discount: 0.65 }
+  ];
+  let updatedSales = calculateSalesTotals(sales)
+  console.log(updatedSales)
+//Solution 1
+const student = {
+    firstName: 'Akshay',
+    lastName: 'Chaturvedi',
+}
+
+function displayName({firstName, lastName}){
+    console.log(`${firstName} ${lastName}`);
+  }
+  
+  displayName(student);
