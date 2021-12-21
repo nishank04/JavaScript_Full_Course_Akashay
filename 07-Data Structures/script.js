@@ -1,4 +1,4 @@
-// 'use strict';
+ 'use strict';
 
 const restaurant = {
     name: 'Akshay Restaurant',
@@ -30,16 +30,104 @@ const restaurant = {
 
     orderPasta(ing1, ing2, ing3){
         console.log(`Here is your dekicious pasta with ${ing1}, ${ing2}, ${ing3}`)
+    },
+
+    orderPizza: function(mainIngredients, ...otherIngredients){
+        console.log(mainIngredients);
+        console.log(otherIngredients)
     }
 }
 
-const ingredients = [prompt(`Let's make pasta! Ingridient 1?`),
-prompt("ingridient 2"),
-prompt("ingredient 3")]
+const rest1 = {
+    name: 'olive',
+    //numGuest: 20,
+    numGuest: 0,
+}
 
-console.log(ingredients)
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2])
-restaurant.orderPasta(...ingredients)
+const rest2 = {
+    name: 'jamies restaurant',
+    owner: 'Akshay',
+}
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+
+for (const item of menu) {
+    console.log(item)
+}
+
+for (const item of menu.entries()){
+    console.log(item)
+}
+
+for (const item of menu.entries()){
+    console.log(`${item[0] + 1}: ${item[1]}`)
+}
+
+for (const [i, el] of menu.entries()){
+    console.log(`${i + 1}: ${el}`)
+}
+
+console.log(menu.entries())
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||=10;
+
+rest1.numGuest ??= 10;
+
+rest1.owner = rest1.owner && 'Anonymous';
+// rest1.owner &&= 'Anonymous'
+rest2.owner &&= 'Anonymous'
+
+console.log(rest1)
+console.log(rest2)
+//Nullish Coalescing operator
+
+// restaurant.numGuests = 0
+// const guests = restaurant.numGuests || 10;
+// console.log(guests)
+
+// //nullish: null and undefined (Not 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect)
+
+// const ingredients = [prompt(`Let's make pasta! Ingridient 1?`),
+// prompt("ingridient 2"),
+// prompt("ingredient 3")]
+
+// console.log(ingredients)
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2])
+// restaurant.orderPasta(...ingredients)
+
+// console.log(`-----Or----`)
+// //Use ANY data type, return any data type
+// //Short Circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Nishank');
+// console.log(true || 0);
+// console.log(undefined || null);
+
+// console.log(undefined || 0 || '' ||  null || false || 'Hey!' || 23 )
+
+// restaurant.numGuests = 23;
+// const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guest1)
+
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2)
+
+// console.log(`-----And----`)
+// console.log(0 && 'Nishank')
+// console.log(7 && 'Akshay')
+
+// console.log('Hello' && 23 && undefined && 0 && null && 'Nuishank')
+//Use case pending for shortcircuting
+//Practical Example
+// if (restaurant.orderPizza) {
+//     restaurant.orderPizza('oleve', 'speghetti', 'sauce')
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza(0, 'spinach')
 
 // restaurant.orderDelivery({
 //     time: '19:40',
